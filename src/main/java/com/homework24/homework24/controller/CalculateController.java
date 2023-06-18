@@ -27,18 +27,18 @@ public class CalculateController {
 
     @GetMapping("/minus")
     public String getMinus(@RequestParam("num1") double num1, @RequestParam("num2") double num2) {
-        return String.format("%s +%s=%s",num1,num2,service.minus(num1, num2));
+        return String.format("%s -%s=%s",num1,num2,service.minus(num1, num2));
     }
 
     @GetMapping("/multiply")
     public String getMultiply(@RequestParam("num1") double num1, @RequestParam("num2") double num2) {
-        return String.format("%s +%s=%s",num1,num2,service.multiply(num1, num2));
+        return String.format("%s *%s=%s",num1,num2,service.multiply(num1, num2));
     }
 
     @GetMapping("/divide")
     public String getDivide(@RequestParam("num1") double num1, @RequestParam("num2") double num2) {
         try {
-            return String.format("%s +%s=%s", num1, num2, service.divide(num1, num2));
+            return String.format("%s /%s=%s", num1, num2, service.divide(num1, num2));
         } catch (Exception e) {
             return "Делить на ноль нельзя!";
         }
